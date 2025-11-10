@@ -19,10 +19,10 @@ class PIDControllerNode(Node):
         super().__init__('pid_controller')
 
         # ---- Parameters (declare with defaults) ----
-        self.declare_parameter('setpoint', 0.0)
-        self.declare_parameter('kp', 1.0)
+        self.declare_parameter('setpoint', 1.0)
+        self.declare_parameter('kp', 0.5)
         self.declare_parameter('ki', 0.0)
-        self.declare_parameter('kd', 0.0)
+        self.declare_parameter('kd', 0.5)
         self.declare_parameter('u_min', -float('inf'))
         self.declare_parameter('u_max',  float('inf'))
         self.declare_parameter('use_vel_ff', False)
