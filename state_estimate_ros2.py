@@ -16,7 +16,7 @@ class KalmanFilterNode(Node):
         self.state_publisher = self.create_publisher(Float32MultiArray, 'estimated_state', 10)
 
         # Kalman filter initialization
-        dt = 0.1  # Time step
+        dt = 0.01  # Time step
         self.kf = KalmanFilter(dim_x=2, dim_z=1)
         self.kf.x = np.array([0, 0])  # Initial state: [position, velocity]
         self.kf.F = np.array([[1, dt], [0, 1]])  # State transition matrix
